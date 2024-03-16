@@ -324,6 +324,13 @@ Note: This question is the same as 1991: https://leetcode.com/problems/find-the-
 ```python
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        left = 0
+        total = sum(nums)
+        for i, num in enumerate(nums):
+            if left ==total-left-num:
+                return i
+            left+=num
+        return -1
 ```
 ## prefix-sum-09
 ```
