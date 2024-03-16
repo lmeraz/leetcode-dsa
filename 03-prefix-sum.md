@@ -233,24 +233,19 @@ n == nums.length
 ```python
 class Solution:
     def getAverages(self, nums: List[int], k: int) -> List[int]:
-        if k == 0:
+        if k==0:
             return nums
-        
         n = len(nums)
         avgs = [-1]*n
-
-        if 2*k +1 > n:
+        if 2*k+1>n:
             return avgs
-        
-        prefix = [0] * (n+1)
+        prefix = [0]*(n+1)
         for i in range(n):
-            prefix[i+1] = prefix[i] + nums[i]
-
+            prefix[i+1]= prefix[i] + nums[i]
         for i in range(k, n-k):
             left, right = i-k, i+k
-            sub_sum = prefix[right +1] - prefix[left]
-            avg = sub_sum//(2*k+1)
-            avgs[i] = avg
+            sub = prefix[right+1] - prefix[left]
+            avgs[i]=sub//(2*k+1)
         return avgs
 ```
 ## prefix-sum-07
