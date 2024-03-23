@@ -101,17 +101,16 @@ class Solution:
 Pseudocode for a fixed window size
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
 ```
-```
-function fn(arr, k):
-    curr = some data to track the window
-    // build the first window
-    for (int i = 0; i < k; i++)
-        Do something with curr or other variables to build first window
-    ans = answer variable, probably equal to curr here depending on the problem
-    for (int i = k; i < arr.length; i++)
-        Add arr[i] to window
-        Remove arr[i - k] from window
-        Update ans
+```python
+def fixed_window(arr, k):
+    curr = # initialize data
+    for i in range(k): # iterate to include window values
+        # update curr with arr[i] values
+    ans = # initialize answer variable
+    for i in range(k, len(arr)): # move window
+        # include arr[i] to fixed window
+        # remove arr[i-k] from fixed window
+        # update ans
     return ans
 ```
 ## sliding-window-06
