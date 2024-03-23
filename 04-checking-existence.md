@@ -91,14 +91,12 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 ```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dic = {}
+        hashmap= {}
         for i in range(len(nums)):
-            num = nums[i]
-            complement = target - num
-            if complement in dic: # This operation is O(1)!
-                return [i, dic[complement]]
-            dic[num] = i
-        return [-1, -1]
+            complement = target-nums[i]
+            if complement in hashmap:
+                return [i, hashmap[complement]]
+            hashmap[nums[i]] = i
 ```
 ## checking-existence-03
 ```
