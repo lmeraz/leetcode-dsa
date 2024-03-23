@@ -1,64 +1,61 @@
 # 04-checking-existence (prompts completed)
 ## checking-existence-01
 ```
+04 Checking Existence 01
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4511/
-# Declaration: a hash map is declared like any other variable. The syntax is {}
+# Declare a hashmap
 
-# If you want to initialize it with some key value pairs, use the following syntax:
+# Initialize a hashmap with values
 
-# Checking if a key exists: simply use the `in` keyword
+# Check if a key exists
 
-# Accessing a value given a key: use square brackets, similar to an array.
+# Access a value
 
-# Adding or updating a key: use square brackets, similar to an array.
-# If the key already exists, the value will be updated
+# Update a key
 
-# If the key doesn't exist yet, the key value pair will be inserted
-
-# Deleting a key: use the del keyword. Key must exist or you will get an error.
+# Delete a key
 
 # Get size
 
-# Get keys: use .keys(). You can iterate over this using a for loop.
+# Iterate over keys
 
-# Get values: use .values(). You can iterate over this using a for loop.
+# Iterate over values
 ```
 ```python
-# Declaration: a hash map is declared like any other variable. The syntax is {}
+# Declare a hashmap
 hash_map = {}
 
-# If you want to initialize it with some key value pairs, use the following syntax:
+# Initialize a hashmap with values
 hash_map = {1: 2, 5: 3, 7: 2}
 
-# Checking if a key exists: simply use the `in` keyword
+# Check if a key exists
 1 in hash_map # True
 9 in hash_map # False
 
-# Accessing a value given a key: use square brackets, similar to an array.
+# Access a value
 hash_map[5] # 3
 
-# Adding or updating a key: use square brackets, similar to an array.
-# If the key already exists, the value will be updated
+# Update a key
 hash_map[5] = 6
 
-# If the key doesn't exist yet, the key value pair will be inserted
+# Add a key
 hash_map[9] = 15
 
-# Deleting a key: use the del keyword. Key must exist or you will get an error.
+# Delete a key
 del hash_map[9]
 
 # Get size
 len(hash_map) # 3
 
-# Get keys: use .keys(). You can iterate over this using a for loop.
+# Iterate over keys
 keys = hash_map.keys()
 for key in keys:
-    print(key)
+print(key)
 
-# Get values: use .values(). You can iterate over this using a for loop.
+# Iterate over values
 values = hash_map.values()
 for val in values:
-    print(val)
+print(val)
 ```
 ## checking-existence-02
 ```
