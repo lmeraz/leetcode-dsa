@@ -132,12 +132,11 @@ s has at least one repeated letter.
 ```python
 class Solution:
     def repeatedCharacter(self, s: str) -> str:
-        for i in range(len(s)):
-            c = s[i]
-            for j in range(i):
-                if s[j] == c:
-                    return c
-        return ""
+        d=set()
+        for c in s:
+            if c in d:
+                return c
+            d.add(c)
 ```
 ## checking-existence-04
 ```
