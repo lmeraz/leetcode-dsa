@@ -1,11 +1,10 @@
 # fast-slow-pointer (prompts completed)
 ## fast-slow-pointer-01
 ```
-Problem
 What is the pseudocode for a fast and slow pointer?
+https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-lists/4507/
 ```
 ```python
-# Solution
 // head is the head node of a linked list
 function fn(head):
     slow = head
@@ -31,7 +30,6 @@ def get_middle(head):
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
-    
     return slow.val
 ```
 ## fast-slow-pointer-03
@@ -68,7 +66,6 @@ pos is -1 or a valid index in the linked-list.
 Follow up: Can you solve it using O(1) (i.e. constant) memory?
 ```
 ```python
-# Solution
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         slow = head
@@ -78,7 +75,6 @@ class Solution:
             fast = fast.next.next
             if slow == fast:
                 return True
-
         return False
 # Solution Hash O(n) space
 class Solution:
@@ -93,8 +89,9 @@ class Solution:
 ```
 ## fast-slow-pointer-04
 ```
-Problem:
-Example 3: Given the head of a linked list and an integer k, return the kth node from the end.
+Example 3:
+https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-lists/4507/
+Given the head of a linked list and an integer k, return the kth node from the end.
 For example, given the linked list that represents 1 -> 2 -> 3 -> 4 -> 5 and k = 2, return the node with value 4, as it is the 2nd node from the end.
 ```
 ```python
@@ -103,7 +100,6 @@ def find_node(head, k):
     fast = head
     for _ in range(k):
         fast = fast.next
-    
     while fast:
         slow = slow.next
         fast = fast.next
@@ -111,7 +107,6 @@ def find_node(head, k):
 ```
 ## fast-slow-pointer-05
 ```
-Problem
 876. Middle of the Linked List
 https://leetcode.com/problems/middle-of-the-linked-list/description/
 Given the head of a singly linked list, return the middle node of the linked list.
@@ -129,11 +124,22 @@ The number of nodes in the list is in the range [1, 100].
 1 <= Node.val <= 100
 ```
 ```python
-# Solution
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
 ```
 ## fast-slow-pointer-06
 ```
-Problem
 83. Remove Duplicates from Sorted List
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
@@ -152,7 +158,6 @@ The number of nodes in the list is in the range [0, 300].
 The list is guaranteed to be sorted in ascending order.
 ```
 ```python
-# Solution
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         current = head
@@ -280,4 +285,11 @@ The number of nodes in the list is n.
 0 <= Node.val <= 100
 ```
 ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
 ```
