@@ -1,16 +1,14 @@
-# Queues
-## Queues problem 01
+# queues
+## queues-01
 ```
 933. Number of Recent Calls
 https://leetcode.com/problems/number-of-recent-calls/description/
 You have a RecentCounter class which counts the number of recent requests within a certain time frame.
 
 Implement the RecentCounter class:
-
 RecentCounter() Initializes the counter with zero recent requests.
 int ping(int t) Adds a new request at time t, where t represents some time in milliseconds, and returns the number of requests that has happened in the past 3000 milliseconds (including the new request). Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
 It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
-
 
 Example 1:
 Input
@@ -43,7 +41,7 @@ class RecentCounter:
         return len(self.q)
 ```
 
-## queues problems 02
+## queues-02
 ```
 346. Moving Average from Data Stream
 https://leetcode.com/problems/moving-average-from-data-stream/description/
@@ -93,7 +91,7 @@ class MovingAverage:
 # obj = MovingAverage(size)
 # param_1 = obj.next(val)
 ```
-## queues problems 03
+## queues-03
 ```
 225. Implement Stack using Queues
 https://leetcode.com/problems/implement-stack-using-queues/description/
@@ -154,7 +152,7 @@ class MyStack:
 # param_3 = obj.top()
 # param_4 = obj.empty()
 ```
-## queues problems 04
+## queues-04
 ```
 649. Dota2 Senate
 https://leetcode.com/problems/dota2-senate/description/
@@ -170,18 +168,15 @@ The round-based procedure starts from the first senator to the last senator in t
 
 Suppose every senator is smart enough and will play the best strategy for his own party. Predict which party will finally announce the victory and change the Dota2 game. The output should be "Radiant" or "Dire".
 
- 
-
 Example 1:
-
 Input: senate = "RD"
 Output: "Radiant"
 Explanation: 
 The first senator comes from Radiant and he can just ban the next senator's right in round 1. 
 And the second senator can't exercise any rights anymore since his right has been banned. 
 And in round 2, the first senator can just announce the victory since he is the only guy in the senate who can vote.
-Example 2:
 
+Example 2:
 Input: senate = "RDD"
 Output: "Dire"
 Explanation: 
@@ -189,10 +184,8 @@ The first senator comes from Radiant and he can just ban the next senator's righ
 And the second senator can't exercise any rights anymore since his right has been banned. 
 And the third senator comes from Dire and he can ban the first senator's right in round 1. 
 And in round 2, the third senator can just announce the victory since he is the only guy in the senate who can vote.
- 
 
 Constraints:
-
 n == senate.length
 1 <= n <= 104
 senate[i] is either 'R' or 'D'.
