@@ -1,135 +1,312 @@
-# Queues
-## Queues problem 01
+# stacks
+## stacks-01
 ```
-933. Number of Recent Calls
-https://leetcode.com/problems/number-of-recent-calls/description/
-You have a RecentCounter class which counts the number of recent requests within a certain time frame.
+20. Valid Parentheses
+https://leetcode.com/problems/valid-parentheses/description/
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
-Implement the RecentCounter class:
-
-RecentCounter() Initializes the counter with zero recent requests.
-int ping(int t) Adds a new request at time t, where t represents some time in milliseconds, and returns the number of requests that has happened in the past 3000 milliseconds (including the new request). Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
-It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
-
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
 
 Example 1:
-Input
-["RecentCounter", "ping", "ping", "ping", "ping"]
-[[], [1], [100], [3001], [3002]]
-Output
-[null, 1, 2, 3, 3]
-Explanation
-RecentCounter recentCounter = new RecentCounter();
-recentCounter.ping(1);     // requests = [1], range is [-2999,1], return 1
-recentCounter.ping(100);   // requests = [1, 100], range is [-2900,100], return 2
-recentCounter.ping(3001);  // requests = [1, 100, 3001], range is [1,3001], return 3
-recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
+Input: s = "()"
+Output: true
+
+Example 2:
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+Input: s = "(]"
+Output: false
 
 Constraints:
-1 <= t <= 109
-Each test case will call ping with strictly increasing values of t.
-At most 104 calls will be made to ping.
+1 <= s.length <= 104
+s consists of parentheses only '()[]{}'.
 ```
 ```python
-from collections import deque
-class RecentCounter:
-    def __init__(self):
-        self.q = deque()
-
-    def ping(self, t: int) -> int:
-        while self.q and self.q[0] < t - 3000:
-            self.q.popleft()
-        self.q.append(t)
-        return len(self.q)
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        matching = {"(": ")", "[": "]", "{": "}"}
+        for c in s:
+            if c in matching: # if c is an opening bracket
+                stack.append(c)
+            else:
+                if not stack:
+                    return False
+                previous_opening = stack.pop()
+                if matching[previous_opening] != c:
+                    return False
+        return not stack
 ```
-
-## queues problems 02
+## stacks-02
 ```
-346. Moving Average from Data Stream
-https://leetcode.com/problems/moving-average-from-data-stream/description/
-Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+1047. Remove All Adjacent Duplicates In String
+https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
 
-Implement the MovingAverage class:
+We repeatedly make duplicate removals on s until we no longer can.
 
-MovingAverage(int size) Initializes the object with the size of the window size.
-double next(int val) Returns the moving average of the last size values of the stream.
+Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.
 
 Example 1:
-Input
-["MovingAverage", "next", "next", "next", "next"]
-[[3], [1], [10], [3], [5]]
-Output
-[null, 1.0, 5.5, 4.66667, 6.0]
+Input: s = "abbaca"
+Output: "ca"
+Explanation: 
+For example, in "abbaca" we could remove "bb" since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is "aaca", of which only "aa" is possible, so the final string is "ca".
 
-Explanation
-MovingAverage movingAverage = new MovingAverage(3);
-movingAverage.next(1); // return 1.0 = 1 / 1
-movingAverage.next(10); // return 5.5 = (1 + 10) / 2
-movingAverage.next(3); // return 4.66667 = (1 + 10 + 3) / 3
-movingAverage.next(5); // return 6.0 = (10 + 3 + 5) / 3
+Example 2:
+Input: s = "azxxzy"
+Output: "ay"
 
 Constraints:
-1 <= size <= 1000
--105 <= val <= 105
-At most 104 calls will be made to next.
+1 <= s.length <= 105
+s consists of lowercase English letters.
 ```
 ```python
-from collections import deque
-class MovingAverage:
-    def __init__(self, size: int):
-        self.size = size
-        self.window = deque(maxlen=size)
-        self.total = 0
-
-    def next(self, val: int) -> float:
-        if len(self.window) == self.size:
-            self.total -= self.window.popleft()
-        self.window.append(val)
-        self.total += val
-        return self.total / len(self.window)
-
-
-# Your MovingAverage object will be instantiated and called as such:
-# obj = MovingAverage(size)
-# param_1 = obj.next(val)
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        stack = []
+        for c in s:
+            if stack and stack[-1] == c:
+                stack.pop()
+            else:
+                stack.append(c)
+        return ''.join(stack)
 ```
-## queues problems 03
+## stacks-03
 ```
-225. Implement Stack using Queues
-https://leetcode.com/problems/implement-stack-using-queues/description/
-Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
-Implement the MyStack class:
-void push(int x) Pushes element x to the top of the stack.
-int pop() Removes the element on the top of the stack and returns it.
-int top() Returns the element on the top of the stack.
-boolean empty() Returns true if the stack is empty, false otherwise.
+844. Backspace String Compare
+https://leetcode.com/problems/backspace-string-compare/description/
+Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
+
+Note that after backspacing an empty text, the text will continue empty.
+
+Example 1:
+Input: s = "ab#c", t = "ad#c"
+Output: true
+Explanation: Both s and t become "ac".
+
+Example 2:
+Input: s = "ab##", t = "c#d#"
+Output: true
+Explanation: Both s and t become "".
+
+Example 3:
+Input: s = "a#c", t = "b"
+Output: false
+Explanation: s becomes "c" while t becomes "b".
+
+Constraints:
+1 <= s.length, t.length <= 200
+s and t only contain lowercase letters and '#' characters.
+
+Follow up: Can you solve it in O(n) time and O(1) space?
+```
+```python
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        def build(s):
+            stack = []
+            for c in s:
+                if c != "#":
+                    stack.append(c)
+                elif stack:
+                    stack.pop()
+
+            return "".join(stack)
+
+        return build(s) == build(t)
+```
+## stacks-04
+```
+71. Simplify Path
+https://leetcode.com/problems/simplify-path/editorial/
+Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
+
+In a Unix-style file system, a period '.' refers to the current directory, a double period '..' refers to the directory up a level, and any multiple consecutive slashes (i.e. '//') are treated as a single slash '/'. For this problem, any other format of periods such as '...' are treated as file/directory names.
+
+The canonical path should have the following format:
+
+The path starts with a single slash '/'.
+Any two directories are separated by a single slash '/'.
+The path does not end with a trailing '/'.
+The path only contains the directories on the path from the root directory to the target file or directory (i.e., no period '.' or double period '..')
+Return the simplified canonical path.
+
+Example 1:
+Input: path = "/home/"
+Output: "/home"
+Explanation: Note that there is no trailing slash after the last directory name.
+
+Example 2:
+Input: path = "/../"
+Output: "/"
+Explanation: Going one level up from the root directory is a no-op, as the root level is the highest level you can go.
+
+Example 3:
+Input: path = "/home//foo/"
+Output: "/home/foo"
+Explanation: In the canonical path, multiple consecutive slashes are replaced by a single one.
+
+Constraints:
+1 <= path.length <= 3000
+path consists of English letters, digits, period '.', slash '/' or '_'.
+path is a valid absolute Unix path.
+```
+```python
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        # Initialize a stack
+        stack = []
+        # Split the input string on "/" as the delimiter
+        # and process each portion one by one
+        for portion in path.split("/"):
+            # If the current component is a "..", then
+            # we pop an entry from the stack if it's non-empty
+            if portion == "..":
+                if stack:
+                    stack.pop()
+            elif portion == "." or not portion:
+                # A no-op for a "." or an empty string
+                continue
+            else:
+                # Finally, a legitimate directory name, so we add it
+                # to our stack
+                stack.append(portion)
+        # Stich together all the directory names together
+        final_str = "/" + "/".join(stack)
+        return final_str
+```
+# stacks-05
+```
+1544. Make The String Great
+https://leetcode.com/problems/make-the-string-great/description/
+Given a string s of lower and upper case English letters.
+
+A good string is a string which doesn't have two adjacent characters s[i] and s[i + 1] where:
+
+0 <= i <= s.length - 2
+s[i] is a lower-case letter and s[i + 1] is the same letter but in upper-case or vice-versa.
+To make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.
+
+Return the string after making it good. The answer is guaranteed to be unique under the given constraints.
+
+Notice that an empty string is also good.
+
+Example 1:
+Input: s = "leEeetcode"
+Output: "leetcode"
+Explanation: In the first step, either you choose i = 1 or i = 2, both will result "leEeetcode" to be reduced to "leetcode".
+
+Example 2:
+Input: s = "abBAcC"
+Output: ""
+Explanation: We have many possible scenarios, and all lead to the same answer. For example:
+"abBAcC" --> "aAcC" --> "cC" --> ""
+"abBAcC" --> "abBA" --> "aA" --> ""
+
+Example 3:
+Input: s = "s"
+Output: "s"
+
+Constraints:
+1 <= s.length <= 100
+s contains only lower and upper case English letters.
+```
+```python
+class Solution:
+    def makeGood(self, s: str) -> str:
+        stack = []
+        for c in s:
+            if stack and abs(ord(stack[-1]) - ord(c)) == 32:
+                stack.pop()
+            else:
+                stack.append(c)
+        return ''.join(stack)
+```
+## stacks-06
+```
+2390. Removing Stars From a String
+https://leetcode.com/problems/removing-stars-from-a-string/description/
+You are given a string s, which contains stars *.
+
+In one operation, you can:
+
+Choose a star in s.
+Remove the closest non-star character to its left, as well as remove the star itself.
+Return the string after all stars have been removed.
+
+Note:
+
+The input will be generated such that the operation is always possible.
+It can be shown that the resulting string will always be unique.
+
+Example 1:
+Input: s = "leet**cod*e"
+Output: "lecoe"
+Explanation: Performing the removals from left to right:
+- The closest character to the 1st star is 't' in "leet**cod*e". s becomes "lee*cod*e".
+- The closest character to the 2nd star is 'e' in "lee*cod*e". s becomes "lecod*e".
+- The closest character to the 3rd star is 'd' in "lecod*e". s becomes "lecoe".
+There are no more stars, so we return "lecoe".
+Example 2:
+Input: s = "erase*****"
+Output: ""
+Explanation: The entire string is removed, so we return an empty string.
+
+Constraints:
+1 <= s.length <= 105
+s consists of lowercase English letters and stars *.
+The operation above can be performed on s.
+```
+```python
+class Solution:
+    def removeStars(self, s: str) -> str:
+```
+## stacks-07
+```
+232. Implement Queue using Stacks
+https://leetcode.com/problems/implement-queue-using-stacks/description/
+Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
+
+Implement the MyQueue class:
+void push(int x) Pushes element x to the back of the queue.
+int pop() Removes the element from the front of the queue and returns it.
+int peek() Returns the element at the front of the queue.
+boolean empty() Returns true if the queue is empty, false otherwise.
 
 Notes:
-You must use only standard operations of a queue, which means that only push to back, peek/pop from front, size and is empty operations are valid.
-Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue) as long as you use only a queue's standard operations.
-Example 1:
+You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
+Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
 
+Example 1:
 Input
-["MyStack", "push", "push", "top", "pop", "empty"]
+["MyQueue", "push", "push", "peek", "pop", "empty"]
 [[], [1], [2], [], [], []]
 Output
-[null, null, null, 2, 2, false]
+[null, null, null, 1, 1, false]
 
 Explanation
-MyStack myStack = new MyStack();
-myStack.push(1);
-myStack.push(2);
-myStack.top(); // return 2
-myStack.pop(); // return 2
-myStack.empty(); // return False
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
+
 Constraints:
 1 <= x <= 9
-At most 100 calls will be made to push, pop, top, and empty.
-All the calls to pop and top are valid.
-Follow-up: Can you implement the stack using only one queue?
+At most 100 calls will be made to push, pop, peek, and empty.
+All the calls to pop and peek are valid.
+
+Follow-up: Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
 ```
 ```python
-class MyStack:
+class MyQueue:
 
     def __init__(self):
         
@@ -140,64 +317,179 @@ class MyStack:
     def pop(self) -> int:
         
 
-    def top(self) -> int:
+    def peek(self) -> int:
         
 
     def empty(self) -> bool:
         
 
 
-# Your MyStack object will be instantiated and called as such:
-# obj = MyStack()
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
 # obj.push(x)
 # param_2 = obj.pop()
-# param_3 = obj.top()
+# param_3 = obj.peek()
 # param_4 = obj.empty()
 ```
-## queues problems 04
+## stacks-08
 ```
-649. Dota2 Senate
-https://leetcode.com/problems/dota2-senate/description/
-In the world of Dota2, there are two parties: the Radiant and the Dire.
+2434. Using a Robot to Print the Lexicographically Smallest String
+https://leetcode.com/problems/using-a-robot-to-print-the-lexicographically-smallest-string/description/
+You are given a string s and a robot that currently holds an empty string t. Apply one of the following operations until s and t are both empty:
 
-The Dota2 senate consists of senators coming from two parties. Now the Senate wants to decide on a change in the Dota2 game. The voting for this change is a round-based procedure. In each round, each senator can exercise one of the two rights:
-
-Ban one senator's right: A senator can make another senator lose all his rights in this and all the following rounds.
-Announce the victory: If this senator found the senators who still have rights to vote are all from the same party, he can announce the victory and decide on the change in the game.
-Given a string senate representing each senator's party belonging. The character 'R' and 'D' represent the Radiant party and the Dire party. Then if there are n senators, the size of the given string will be n.
-
-The round-based procedure starts from the first senator to the last senator in the given order. This procedure will last until the end of voting. All the senators who have lost their rights will be skipped during the procedure.
-
-Suppose every senator is smart enough and will play the best strategy for his own party. Predict which party will finally announce the victory and change the Dota2 game. The output should be "Radiant" or "Dire".
-
- 
+Remove the first character of a string s and give it to the robot. The robot will append this character to the string t.
+Remove the last character of a string t and give it to the robot. The robot will write this character on paper.
+Return the lexicographically smallest string that can be written on the paper.
 
 Example 1:
+Input: s = "zza"
+Output: "azz"
+Explanation: Let p denote the written string.
+Initially p="", s="zza", t="".
+Perform first operation three times p="", s="", t="zza".
+Perform second operation three times p="azz", s="", t="".
 
-Input: senate = "RD"
-Output: "Radiant"
-Explanation: 
-The first senator comes from Radiant and he can just ban the next senator's right in round 1. 
-And the second senator can't exercise any rights anymore since his right has been banned. 
-And in round 2, the first senator can just announce the victory since he is the only guy in the senate who can vote.
 Example 2:
+Input: s = "bac"
+Output: "abc"
+Explanation: Let p denote the written string.
+Perform first operation twice p="", s="c", t="ba". 
+Perform second operation twice p="ab", s="c", t="". 
+Perform first operation p="ab", s="", t="c". 
+Perform second operation p="abc", s="", t="".
 
-Input: senate = "RDD"
-Output: "Dire"
-Explanation: 
-The first senator comes from Radiant and he can just ban the next senator's right in round 1. 
-And the second senator can't exercise any rights anymore since his right has been banned. 
-And the third senator comes from Dire and he can ban the first senator's right in round 1. 
-And in round 2, the third senator can just announce the victory since he is the only guy in the senate who can vote.
- 
-
+Example 3:
+Input: s = "bdda"
+Output: "addb"
+Explanation: Let p denote the written string.
+Initially p="", s="bdda", t="".
+Perform first operation four times p="", s="", t="bdda".
+Perform second operation four times p="addb", s="", t="".
 Constraints:
-
-n == senate.length
-1 <= n <= 104
-senate[i] is either 'R' or 'D'.
+1 <= s.length <= 105
+s consists of only English lowercase letters.
 ```
 ```python
 class Solution:
-    def predictPartyVictory(self, senate: str) -> str:
+    def robotWithString(self, s: str) -> str:
+```
+## stacks-09
+```
+946. Validate Stack Sequences
+https://leetcode.com/problems/validate-stack-sequences/description/
+Given two integer arrays pushed and popped each with distinct values, return true if this could have been the result of a sequence of push and pop operations on an initially empty stack, or false otherwise.
+
+Example 1:
+Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+Output: true
+Explanation: We might do the following sequence:
+push(1), push(2), push(3), push(4),
+pop() -> 4,
+push(5),
+pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
+
+Example 2:
+Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+Output: false
+Explanation: 1 cannot be popped before 2.
+Constraints:
+1 <= pushed.length <= 1000
+0 <= pushed[i] <= 1000
+All the elements of pushed are unique.
+popped.length == pushed.length
+popped is a permutation of pushed.
+```
+```python
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+```
+```
+735. Asteroid Collision
+https://leetcode.com/problems/asteroid-collision/description/
+We are given an array asteroids of integers representing asteroids in a row.
+
+For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.
+
+Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
+
+Example 1:
+Input: asteroids = [5,10,-5]
+Output: [5,10]
+Explanation: The 10 and -5 collide resulting in 10. The 5 and 10 never collide.
+Example 2:
+Input: asteroids = [8,-8]
+Output: []
+Explanation: The 8 and -8 collide exploding each other.
+Example 3:
+Input: asteroids = [10,2,-5]
+Output: [10]
+Explanation: The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.
+
+Constraints:
+2 <= asteroids.length <= 104
+-1000 <= asteroids[i] <= 1000
+asteroids[i] != 0
+```
+```python
+class Solution:
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+```
+```
+155. Min Stack
+https://leetcode.com/problems/min-stack/description/
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+Implement the MinStack class:
+
+MinStack() initializes the stack object.
+void push(int val) pushes the element val onto the stack.
+void pop() removes the element on the top of the stack.
+int top() gets the top element of the stack.
+int getMin() retrieves the minimum element in the stack.
+You must implement a solution with O(1) time complexity for each function.
+
+Example 1:
+Input
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+Output
+[null,null,null,null,-3,null,0,-2]
+
+Explanation
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // return -3
+minStack.pop();
+minStack.top();    // return 0
+minStack.getMin(); // return -2
+
+Constraints:
+-231 <= val <= 231 - 1
+Methods pop, top and getMin operations will always be called on non-empty stacks.
+At most 3 * 104 calls will be made to push, pop, top, and getMin.
+```
+```python
+class MinStack:
+
+    def __init__(self):
+        
+
+    def push(self, val: int) -> None:
+        
+
+    def pop(self) -> None:
+        
+
+    def top(self) -> int:
+        
+
+    def getMin(self) -> int:
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
 ```
