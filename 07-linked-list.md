@@ -147,7 +147,7 @@ def get_sum(head):
     return ans
 ```
 ## linked-list-08
-203. Remove LInked List Elements
+203. Remove Linked List Elements
 https://leetcode.com/problems/remove-linked-list-elements/description/
 Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
 
@@ -176,7 +176,7 @@ class Solution:
         
 ```
 ## linked-list-09
-1290. Convert BInary Number in a Linked List to Integer
+1290. Convert Binary Number in a Linked List to Integer
 https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/description/
 Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
 Return the decimal value of the number in the linked list.
