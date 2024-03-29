@@ -1,11 +1,9 @@
 # linked-list (prompts completed) (anki completed)
 ## linked-list-01
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Create a ListNode class
 Initialize 3 nodes 1,2,3 one after the next
 Print each node's value
-```
 ```python
 class ListNode:
     def __init__(self, val):
@@ -24,10 +22,8 @@ print(head.next.val)
 print(head.next.next.val)
 ```
 ## linked-list-02
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Return the sum of all values provided the head of a linked list
-```
 traversal
 ```python
 def get_sum(head):
@@ -35,15 +31,12 @@ def get_sum(head):
     while head:
         ans += head.val
         head = head.next
-    
     return ans
 ```
 ## linked-list-03
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Create a ListNode class
 Create an add_node method
-```
 ```python
 class ListNode:
     def __init__(self, val):
@@ -56,11 +49,9 @@ def add_node(prev_node, node_to_add):
     prev_node.next = node_to_add
 ```
 ## linked-list-04
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Create a ListNode class
 Create an delete_node method
-```
 ```python
 class ListNode:
     def __init__(self, val):
@@ -72,12 +63,10 @@ def delete_node(prev_node):
     prev_node.next = prev_node.next.next
 ```
 ## linked-list-05
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Create a ListNode class that is a doubly linked lists
 Add an add_node method
 Add a delete_node method
-```
 ```python
 class ListNode:
     def __init__(self, val):
@@ -101,11 +90,9 @@ def delete_node(node):
     next_node.prev = prev_node
 ```
 ## linked-list-06
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Create a List node class
 Use sentinel nodes
-```
 ```python
 class ListNode:
     def __init__(self, val):
@@ -147,10 +134,8 @@ head.next = tail
 tail.prev = head
 ```
 ## linked-list-07
-```
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-list/4507/
 Traverse a linked lists using a dummy pointer to sum values
-```
 ```python
 def get_sum(head):
     ans = 0
@@ -162,7 +147,6 @@ def get_sum(head):
     return ans
 ```
 ## linked-list-08
-```
 203. Remove LInked List Elements
 https://leetcode.com/problems/remove-linked-list-elements/description/
 Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
@@ -181,7 +165,6 @@ Constraints:
 The number of nodes in the list is in the range [0, 104].
 1 <= Node.val <= 50
 0 <= val <= 50
-```
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -193,7 +176,6 @@ class Solution:
         
 ```
 ## linked-list-09
-```
 1290. Convert BInary Number in a Linked List to Integer
 https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/description/
 Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
@@ -210,7 +192,6 @@ Constraints:
 The Linked List is not empty.
 Number of nodes will not exceed 30.
 Each node's value is either 0 or 1.
-```
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -222,7 +203,6 @@ class Solution:
         
 ```
 ## linked-list-10
-```
 328. Odd Even Linked List
 https://leetcode.com/problems/odd-even-linked-list/description/
 Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
@@ -244,7 +224,6 @@ Output: [2,3,6,7,1,5,4]
 Constraints:
 The number of nodes in the linked list is in the range [0, 104].
 -106 <= Node.val <= 106
-```
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -255,7 +234,6 @@ class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 ```
 ## linked-list-11
-```
 707. Design Linked List
 https://leetcode.com/problems/design-linked-list/description/
 Design your implementation of the linked list. You can choose to use a singly or doubly linked list.
@@ -290,6 +268,5 @@ Constraints:
 0 <= index, val <= 1000
 Please do not use the built-in LinkedList library.
 At most 2000 calls will be made to get, addAtHead, addAtTail, addAtIndex and deleteAtIndex.
-```
 ```python
 ```
