@@ -1,6 +1,6 @@
 # queues
 ## queues-01
-```
+Example
 933. Number of Recent Calls
 https://leetcode.com/problems/number-of-recent-calls/description/
 You have a RecentCounter class which counts the number of recent requests within a certain time frame.
@@ -27,7 +27,6 @@ Constraints:
 1 <= t <= 109
 Each test case will call ping with strictly increasing values of t.
 At most 104 calls will be made to ping.
-```
 ```python
 from collections import deque
 class RecentCounter:
@@ -42,7 +41,6 @@ class RecentCounter:
 ```
 
 ## queues-02
-```
 346. Moving Average from Data Stream
 https://leetcode.com/problems/moving-average-from-data-stream/description/
 Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
@@ -70,7 +68,6 @@ Constraints:
 1 <= size <= 1000
 -105 <= val <= 105
 At most 104 calls will be made to next.
-```
 ```python
 from collections import deque
 class MovingAverage:
@@ -92,7 +89,6 @@ class MovingAverage:
 # param_1 = obj.next(val)
 ```
 ## queues-03
-```
 225. Implement Stack using Queues
 https://leetcode.com/problems/implement-stack-using-queues/description/
 Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
@@ -125,7 +121,6 @@ Constraints:
 At most 100 calls will be made to push, pop, top, and empty.
 All the calls to pop and top are valid.
 Follow-up: Can you implement the stack using only one queue?
-```
 ```python
 class MyStack:
 
@@ -153,7 +148,6 @@ class MyStack:
 # param_4 = obj.empty()
 ```
 ## queues-04
-```
 649. Dota2 Senate
 https://leetcode.com/problems/dota2-senate/description/
 In the world of Dota2, there are two parties: the Radiant and the Dire.
@@ -189,7 +183,6 @@ Constraints:
 n == senate.length
 1 <= n <= 104
 senate[i] is either 'R' or 'D'.
-```
 ```python
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
