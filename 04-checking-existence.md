@@ -1,8 +1,7 @@
 # 04-checking-existence (prompts completed)
 ## checking-existence-01
-```
-04 Checking Existence 01
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4511/
+```python
 # Declare a hashmap
 
 # Initialize a hashmap with values
@@ -58,7 +57,6 @@ for val in values:
 print(val)
 ```
 ## checking-existence-02
-```
 1. Two Sum
 https://leetcode.com/problems/two-sum/description/
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -87,7 +85,6 @@ Constraints:
 Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
-```
 ```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -99,7 +96,6 @@ class Solution:
             hashmap[nums[i]] = i
 ```
 ## checking-existence-03
-```
 2351. First Letter to Appear Twice
 https://leetcode.com/problems/first-letter-to-appear-twice/description/
 Given a string s consisting of lowercase English letters, return the first letter to appear twice.
@@ -128,7 +124,6 @@ Constraints:
 2 <= s.length <= 100
 s consists of lowercase English letters.
 s has at least one repeated letter.
-```
 ```python
 class Solution:
     def repeatedCharacter(self, s: str) -> str:
@@ -139,11 +134,9 @@ class Solution:
             d.add(c)
 ```
 ## checking-existence-04
-```
 Example 3:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4511/
 Given an integer array nums, find all the unique numbers x in nums that satisfy the following: x + 1 is not in nums, and x - 1 is not in nums.
-```
 ```python
 def find_numbers(nums):
     ans = []
@@ -156,7 +149,6 @@ def find_numbers(nums):
     return ans
 ```
 ## checking-existence-05
-```
 1832. Check if the Sentence is Pangram
 https://leetcode.com/problems/check-if-the-sentence-is-pangram/editorial/
 A pangram is a sentence where every letter of the English alphabet appears at least once.
@@ -175,14 +167,12 @@ Output: false
 Constraints:
 1 <= sentence.length <= 1000
 sentence consists of lowercase English letters.
-```
 ```python
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
         return len(set(sentence)) == 26
 ```
 ## checking-existence-06
-```
 268. Missing Number
 https://leetcode.com/problems/missing-number/editorial/
 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
@@ -209,7 +199,6 @@ n == nums.length
 All the numbers of nums are unique.
 
 Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
-```
 ```python
 class Solution:
     def missingNumber(self, nums: List[int])-> int:
@@ -219,7 +208,6 @@ class Solution:
                 return n
 ```
 ## checking-existence-07
-```
 1426. Counting Elements
 https://leetcode.com/problems/counting-elements/editorial/
 Given an integer array arr, count how many elements x there are, such that x + 1 is also in arr. If there are duplicates in arr, count them separately.
@@ -237,7 +225,6 @@ Explanation: No numbers are counted, cause there is no 2, 4, 6, or 8 in arr.
 Constraints:
 1 <= arr.length <= 1000
 0 <= arr[i] <= 1000
-```
 ```python
 class Solution:
     def countElements(self, arr: List[int]) -> int:
@@ -249,7 +236,6 @@ class Solution:
         return ct
 ```
 ## checking-existence-08 
-```
 217. Contains Duplicate
 https://leetcode.com/problems/contains-duplicate/description/
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
@@ -269,7 +255,6 @@ Output: true
 Constraints:
 1 <= nums.length <= 105
 -109 <= nums[i] <= 109
-```
 ```python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
@@ -281,7 +266,6 @@ class Solution:
         return False
 ```
 ## checking-existence-09
-```
 1436. Destination City
 https://leetcode.com/problems/destination-city/description/
 You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. Return the destination city, that is, the city without any path outgoing to another city.
@@ -314,13 +298,11 @@ paths[i].length == 2
 1 <= cityAi.length, cityBi.length <= 10
 cityAi != cityBi
 All strings consist of lowercase and uppercase English letters and the space character.
-```
 ```python
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
 ```
 ## checking-existence-10
-```
 1496. Patch Crossing
 https://leetcode.com/problems/path-crossing/
 Given a string path, where path[i] = 'N', 'S', 'E' or 'W', each representing moving one unit north, south, east, or west, respectively. You start at the origin (0, 0) on a 2D plane and walk on the path specified by path.
@@ -340,7 +322,6 @@ Explanation: Notice that the path visits the origin twice.
 Constraints:
 1 <= path.length <= 104
 path[i] is either 'N', 'S', 'E', or 'W'.
-```
 ```python
 class Solution:
     def isPathCrossing(self, path: str) -> bool:
