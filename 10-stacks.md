@@ -1,6 +1,5 @@
 # stacks
 ## stacks-01
-```
 20. Valid Parentheses
 https://leetcode.com/problems/valid-parentheses/description/
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -25,7 +24,6 @@ Output: false
 Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.
-```
 ```python
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -43,7 +41,6 @@ class Solution:
         return not stack
 ```
 ## stacks-02
-```
 1047. Remove All Adjacent Duplicates In String
 https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
 You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
@@ -65,7 +62,6 @@ Output: "ay"
 Constraints:
 1 <= s.length <= 105
 s consists of lowercase English letters.
-```
 ```python
 class Solution:
     def removeDuplicates(self, s: str) -> str:
@@ -78,7 +74,6 @@ class Solution:
         return ''.join(stack)
 ```
 ## stacks-03
-```
 844. Backspace String Compare
 https://leetcode.com/problems/backspace-string-compare/description/
 Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
@@ -105,7 +100,6 @@ Constraints:
 s and t only contain lowercase letters and '#' characters.
 
 Follow up: Can you solve it in O(n) time and O(1) space?
-```
 ```python
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
@@ -122,7 +116,6 @@ class Solution:
         return build(s) == build(t)
 ```
 ## stacks-04
-```
 71. Simplify Path
 https://leetcode.com/problems/simplify-path/editorial/
 Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
@@ -156,7 +149,6 @@ Constraints:
 1 <= path.length <= 3000
 path consists of English letters, digits, period '.', slash '/' or '_'.
 path is a valid absolute Unix path.
-```
 ```python
 class Solution:
     def simplifyPath(self, path: str) -> str:
@@ -181,8 +173,7 @@ class Solution:
         final_str = "/" + "/".join(stack)
         return final_str
 ```
-# stacks-05
-```
+## stacks-05
 1544. Make The String Great
 https://leetcode.com/problems/make-the-string-great/description/
 Given a string s of lower and upper case English letters.
@@ -216,7 +207,6 @@ Output: "s"
 Constraints:
 1 <= s.length <= 100
 s contains only lower and upper case English letters.
-```
 ```python
 class Solution:
     def makeGood(self, s: str) -> str:
@@ -229,7 +219,6 @@ class Solution:
         return ''.join(stack)
 ```
 ## stacks-06
-```
 2390. Removing Stars From a String
 https://leetcode.com/problems/removing-stars-from-a-string/description/
 You are given a string s, which contains stars *.
@@ -262,13 +251,11 @@ Constraints:
 1 <= s.length <= 105
 s consists of lowercase English letters and stars *.
 The operation above can be performed on s.
-```
 ```python
 class Solution:
     def removeStars(self, s: str) -> str:
 ```
 ## stacks-07
-```
 232. Implement Queue using Stacks
 https://leetcode.com/problems/implement-queue-using-stacks/description/
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
@@ -304,7 +291,6 @@ At most 100 calls will be made to push, pop, peek, and empty.
 All the calls to pop and peek are valid.
 
 Follow-up: Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
-```
 ```python
 class MyQueue:
 
@@ -332,7 +318,6 @@ class MyQueue:
 # param_4 = obj.empty()
 ```
 ## stacks-08
-```
 2434. Using a Robot to Print the Lexicographically Smallest String
 https://leetcode.com/problems/using-a-robot-to-print-the-lexicographically-smallest-string/description/
 You are given a string s and a robot that currently holds an empty string t. Apply one of the following operations until s and t are both empty:
@@ -368,13 +353,11 @@ Perform second operation four times p="addb", s="", t="".
 Constraints:
 1 <= s.length <= 105
 s consists of only English lowercase letters.
-```
 ```python
 class Solution:
     def robotWithString(self, s: str) -> str:
 ```
 ## stacks-09
-```
 946. Validate Stack Sequences
 https://leetcode.com/problems/validate-stack-sequences/description/
 Given two integer arrays pushed and popped each with distinct values, return true if this could have been the result of a sequence of push and pop operations on an initially empty stack, or false otherwise.
@@ -398,12 +381,11 @@ Constraints:
 All the elements of pushed are unique.
 popped.length == pushed.length
 popped is a permutation of pushed.
-```
 ```python
 class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
 ```
-```
+## stacks-10
 735. Asteroid Collision
 https://leetcode.com/problems/asteroid-collision/description/
 We are given an array asteroids of integers representing asteroids in a row.
@@ -429,12 +411,11 @@ Constraints:
 2 <= asteroids.length <= 104
 -1000 <= asteroids[i] <= 1000
 asteroids[i] != 0
-```
 ```python
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
 ```
-```
+## stacks-11
 155. Min Stack
 https://leetcode.com/problems/min-stack/description/
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
@@ -469,7 +450,6 @@ Constraints:
 -231 <= val <= 231 - 1
 Methods pop, top and getMin operations will always be called on non-empty stacks.
 At most 3 * 104 calls will be made to push, pop, top, and getMin.
-```
 ```python
 class MinStack:
 
