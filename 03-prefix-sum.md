@@ -1,9 +1,7 @@
 # 03-prefix-sum (prompts completed) (anki completed)
 ## prefix-sum-01
-```
 Pseudocode for prefix sum
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4503/
-```
 ```
 Given an array nums,
 
@@ -16,13 +14,11 @@ for i in range(1, len(nums)):
     prefix.append(nums[i] + prefix[len(prefix)-1])
 ```
 ## prefix-sum-02
-```
 Example 1:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4503/
 Given an integer array nums, an array queries where queries[i] = [x, y] and an integer limit, return a boolean array that represents the answer to each query. A query is true if the sum of the subarray from x to y is less than limit, or false otherwise.
 
 For example, given nums = [1, 6, 3, 2, 7, 2], queries = [[0, 3], [2, 5], [2, 4]], and limit = 13, the answer is [true, false, true]. For each query, the subarray sums are [12, 14, 12].
-```
 ```python
 def answer_queries(nums, queries, limit):
     prefix = [nums[0]]
@@ -35,7 +31,6 @@ def answer_queries(nums, queries, limit):
     return ans
 ```
 ## prefix-sum-03
-```
 2270. Number of Ways to Split Array
 https://leetcode.com/problems/number-of-ways-to-split-array/description/
 
@@ -67,7 +62,6 @@ There are two valid splits in nums:
 Constraints:
 2 <= nums.length <= 105
 -105 <= nums[i] <= 105
-```
 ```python
 class Solution:
     def waysToSplitArray(self, nums: List[int]) -> int:
@@ -100,7 +94,6 @@ class Solution:
         return ans
 ```
 ## prefix-sum-04
-```
 1480. Running Sum of 1d Array
 https://leetcode.com/problems/running-sum-of-1d-array/description/
 
@@ -125,7 +118,6 @@ Output: [3,4,6,16,17]
 Constraints:
 1 <= nums.length <= 1000
 -10^6 <= nums[i] <= 10^6
-```
 ```python
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
@@ -134,7 +126,6 @@ class Solution:
         return nums
 ```
 ## prefix-sum-05
-```
 1413. Minimum Value to Get Positive Step by Step Sum
 https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/description/
 
@@ -168,7 +159,6 @@ Output: 5
 Constraints:
 1 <= nums.length <= 100
 -100 <= nums[i] <= 100
-```
 ```python
 class Solution:
     def minStartValue(self, nums: List[int]) -> int:
@@ -188,7 +178,6 @@ class Solution:
         return -min_val + 1
 ```
 ## prefix-sum-06
-```
 2090. K Radius Sub-array Averages
 https://leetcode.com/problems/k-radius-subarray-averages/
 You are given a 0-indexed array nums of n integers, and an integer k.
@@ -229,7 +218,6 @@ Constraints:
 n == nums.length
 1 <= n <= 105
 0 <= nums[i], k <= 105
-```
 ```python
 class Solution:
     def getAverages(self, nums: List[int], k: int) -> List[int]:
@@ -249,7 +237,6 @@ class Solution:
         return avgs
 ```
 ## prefix-sum-07
-```
 1732. Find the Highest Altitude
 https://leetcode.com/problems/find-the-highest-altitude/description/
 There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. The biker starts his trip on point 0 with altitude equal 0.
@@ -270,7 +257,6 @@ Constraints:
 n == gain.length
 1 <= n <= 100
 -100 <= gain[i] <= 100
-```
 ```python
 class Solution:
     def largestAltitude(self, gain: List[int]) -> int:
@@ -282,7 +268,6 @@ class Solution:
         return max_altitude
 ```
 ## prefix-sum-08
-```
 724. Find Pivot Index
 https://leetcode.com/problems/find-pivot-index/description/
 Given an array of integers nums, calculate the pivot index of this array.
@@ -320,7 +305,7 @@ Constraints:
 -1000 <= nums[i] <= 1000
 
 Note: This question is the same as 1991: https://leetcode.com/problems/find-the-middle-index-in-array/
-```
+
 ```python
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
@@ -333,7 +318,6 @@ class Solution:
         return -1
 ```
 ## prefix-sum-09
-```
 303. Range Sum Query - Immutable
 https://leetcode.com/problems/range-sum-query-immutable/description/
 
@@ -363,7 +347,6 @@ Constraints:
 -105 <= nums[i] <= 105
 0 <= left <= right < nums.length
 At most 104 calls will be made to sumRange.
-```
 ```python
 class NumArray:
     def __init__(self, nums: List[int]):
