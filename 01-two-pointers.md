@@ -1,10 +1,8 @@
 # two-pointers (completed prompts) (anki complete)
 ## two-pointers-01
-```
 Pseudocode for two pointers at edges of input
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4501/
-```
-```
+```bash
 function fn(arr):
     left = 0
     right = arr.length - 1
@@ -21,13 +19,11 @@ Explanation:
 3. At each iteration of the loop, move the pointers towards each other. This means either increment the pointer that started at the first index, decrement the pointer that started at the last index, or both. Deciding which pointers to move will depend on the problem.
 ```
 ## two-pointers-02
-```
 Example 1:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4501/
 Given a string s, return true if it is a palindrome, false otherwise.
 
 A string is a palindrome if it reads the same forward as backward. That means, after reversing it, it is still the same string. For example: "abcdcba", or "racecar".
-```
 ```python
 def check_if_palindrome(s):
     left = 0
@@ -40,13 +36,11 @@ def check_if_palindrome(s):
     return True
 ```
 ## two-pointers-03
-```
 Example 2:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4501/
 Given a sorted array of unique integers and a target integer, return true if there exists a pair of numbers that sum to target, false otherwise. This problem is similar to Two Sum. (In Two Sum, the input is not sorted).
 
 For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return true because 4 + 9 = 13.
-```
 ```python
 def check_for_target(nums, target):
     left = 0
@@ -63,11 +57,9 @@ def check_for_target(nums, target):
     return False
 ```
 ## two-pointers-04
-```
 Pseudocode for two inputs
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4501/
 Move along both inputs simultaneously until all elements have been checked.
-```
 ```
 function fn(arr1, arr2):
     i = j = 0
@@ -92,11 +84,9 @@ Explanation:
 4. Because our while loop will stop when one of the pointers reaches the end, the other pointer will not be at the end of its respective iterable when the loop finishes. Sometimes, we need to iterate through all elements - if this is the case, you will need to write extra code here to make sure both iterables are exhausted.
 ```
 ## two-pointers-05
-```
 Example 3:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4501/
 Given two sorted integer arrays arr1 and arr2, return a new array that combines both of them and is also sorted.
-```
 ```python
 def combine(arr1, arr2):
     # ans is the answer
@@ -118,7 +108,6 @@ def combine(arr1, arr2):
     return ans
 ```
 ## two-pointers-06
-```
 Example 4:
 392. Is Subsequence.
 https://leetcode.com/problems/is-subsequence/description/
@@ -142,7 +131,6 @@ s and t consist only of lowercase English letters.
 
 Follow up:
 Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
-```
 ```python
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
@@ -160,7 +148,6 @@ class Solution:
         return slow == len(s)
 ```
 ## two-pointers-07
-```
 344. Reverse String
 https://leetcode.com/problems/reverse-string/description/
 
@@ -179,7 +166,6 @@ Output: ["h","a","n","n","a","H"]
 Constraints:
 1 <= s.length <= 105
 s[i] is a printable ascii character.
-```
 ```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
@@ -194,7 +180,6 @@ class Solution:
             end -=1
 ```
 ## two-pointers-08
-```
 977. Square of Sorted Arrays
 https://leetcode.com/problems/squares-of-a-sorted-array/description/
 
@@ -216,7 +201,6 @@ Constraints:
 nums is sorted in non-decreasing order.
 
 Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
-```
 ```python
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
@@ -235,7 +219,6 @@ class Solution:
         return new_nums
 ```
 ## two-pointers-09
-```
 557. Reverse Words in a String III
 https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
 
@@ -255,7 +238,6 @@ s contains printable ASCII characters.
 s does not contain any leading or trailing spaces.
 There is at least one word in s.
 All the words in s are separated by a single space.
-```
 ```python
 class Solution:
     def reverseWords(self, s: str) -> str:
@@ -274,7 +256,6 @@ class Solution:
         return ''.join(ans)
 ```
 ## two-pointers-10
-```
 917. Reverse Only Letters
 https://leetcode.com/problems/reverse-only-letters/description/
 Given a string s, reverse the string according to the following rules:
@@ -299,7 +280,6 @@ Constraints:
 1 <= s.length <= 100
 s consists of characters with ASCII values in the range [33, 122].
 s does not contain '\"' or '\\'.
-```
 ```python
 class Solution:
     def reverseOnlyLetters(self, s: str) -> str:
@@ -318,7 +298,6 @@ class Solution:
         return ''.join(array)
 ```
 ## two-pointers-11
-```
 2540. Minimum Common Value
 https://leetcode.com/problems/minimum-common-value/
 Given two integer arrays nums1 and nums2, sorted in non-decreasing order, return the minimum integer common to both arrays. If there is no common integer amongst nums1 and nums2, return -1.
@@ -339,7 +318,6 @@ Constraints:
 1 <= nums1.length, nums2.length <= 105
 1 <= nums1[i], nums2[j] <= 109
 Both nums1 and nums2 are sorted in non-decreasing order.
-```
 ```python
 class Solution:
     def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
@@ -355,7 +333,6 @@ class Solution:
         return -1
 ```
 ## two-pointers-12
-```
 283. Move Zeroes
 https://leetcode.com/problems/move-zeroes/
 Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
@@ -375,7 +352,6 @@ Constraints:
 -231 <= nums[i] <= 231 - 1
 
 Follow up: Could you minimize the total number of operations done?
-```
 ```python
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
@@ -390,7 +366,6 @@ class Solution:
         return nums
 ```
 ## two-pointers-13
-```
 2000. Reverse Prefix of Word
 https://leetcode.com/problems/reverse-prefix-of-word/description/
 Given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
@@ -420,7 +395,6 @@ Constraints:
 1 <= word.length <= 250
 word consists of lowercase English letters.
 ch is a lowercase English letter.
-```
 ```python
 class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
