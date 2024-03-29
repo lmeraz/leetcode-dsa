@@ -2,8 +2,7 @@
 ## monotonic-01
 Pseudocode
 ```python
-Given an integer array nums
-
+#Given an integer array nums
 stack = []
 for num in nums:
     while stack.length > 0 AND stack.top >= num:
@@ -33,7 +32,6 @@ Constraints:
 1 <= temperatures.length <= 105
 30 <= temperatures[i] <= 100
 ```python
-stack = []
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         stack = []
@@ -271,7 +269,6 @@ Constraints:
 ```python
 class Solution:
     def finalPrices(self, prices: List[int]) -> List[int]:
-        
 ```
 ## monotonic-08
 1063. Number of Valid Subarrays
