@@ -1,6 +1,5 @@
-# general-hashing (prompts completed)
-## general-hashing-01
-```
+# hashing (prompts completed)
+## hashing-01
 49. Group Anagrams
 https://leetcode.com/problems/group-anagrams/
 Given an array of strings strs, group the anagrams together. You can return the answer in any order.
@@ -22,7 +21,6 @@ Constraints:
 1 <= strs.length <= 104
 0 <= strs[i].length <= 100
 strs[i] consists of lowercase English letters.
-```
 ```python
 from collections import defaultdict
 
@@ -34,8 +32,7 @@ class Solution:
             groups[key].append(s)
         return groups.values()
 ```
-## general-hashing-02
-```
+## hashing-02
 2260. Minimum Consecutive Cards to Pick Up
 https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/description/
 You are given an integer array cards where cards[i] represents the value of the ith card. A pair of cards are matching if the cards have the same value.
@@ -55,7 +52,6 @@ Explanation: There is no way to pick up a set of consecutive cards that contain 
 Constraints:
 1 <= cards.length <= 105
 0 <= cards[i] <= 106
-```
 ```python
 from collections import defaultdict
 
@@ -86,8 +82,7 @@ class Solution:
 
         return ans if ans < float("inf") else -1
 ```
-## general-hashing-03
-```
+## hashing-03
 2342. Max Sum of a Pair With Equal Sum of Digits
 https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits/description/
 You are given a 0-indexed array nums consisting of positive integers. You can choose two indices i and j, such that i != j, and the sum of digits of the number nums[i] is equal to that of nums[j].
@@ -110,7 +105,6 @@ Explanation: There are no two numbers that satisfy the conditions, so we return 
 Constraints:
 1 <= nums.length <= 105
 1 <= nums[i] <= 109
-```
 ```python
 from collections import defaultdict
 
@@ -159,8 +153,7 @@ class Solution:
 
         return ans
 ```
-## general-hashing-04
-```
+## hashing-04
 2352. Equal Row and Column Pairs
 https://leetcode.com/problems/equal-row-and-column-pairs/description/
 Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj) such that row ri and column cj are equal.
@@ -185,7 +178,6 @@ Constraints:
 n == grid.length == grid[i].length
 1 <= n <= 200
 1 <= grid[i][j] <= 105
-```
 ```python
 from collections import defaultdict
 
@@ -213,8 +205,7 @@ class Solution:
         
         return ans
 ```
-## general-hashing-05
-```
+## hashing-05
 383. Ransom Note
 https://leetcode.com/problems/ransom-note/description/
 Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
@@ -236,7 +227,6 @@ Output: true
 Constraints:
 1 <= ransomNote.length, magazine.length <= 105
 ransomNote and magazine consist of lowercase English letters.
-```
 ```python
 from collections import Counter
 class Solution:
@@ -250,8 +240,7 @@ class Solution:
                 return False
         return True
 ```
-## general-hashing-06
-```
+## hashing-06
 771. Jewels and Stones
 https://leetcode.com/problems/jewels-and-stones/description/
 You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.
@@ -270,7 +259,6 @@ Constraints:
 1 <= jewels.length, stones.length <= 50
 jewels and stones consist of only English letters.
 All the characters of jewels are unique.
-```
 ```python
 class Solution:
     def numJewelsInStones(self, J: 'str', S: 'str') -> 'int':
@@ -281,8 +269,7 @@ class Solution:
                 ct +=1
         return ct
 ```
-## general-hashing-07
-```
+## hashing-07
 3. Longest Substring Without Repeating Characters
 https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 Given a string s, find the length of the longest 
@@ -307,7 +294,6 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 Constraints:
 0 <= s.length <= 5 * 104
 s consists of English letters, digits, symbols and spaces.
-```
 ```python
 from collections import defaultdict
 class Solution:
@@ -318,8 +304,7 @@ class Solution:
         ans = 0
         for right in range(len(s)):
 ```
-## general-hashing-08
-```
+## hashing-08
 205. Isomorphic Strings
 https://leetcode.com/problems/isomorphic-strings/description/
 Given two strings s and t, determine if they are isomorphic.
@@ -344,11 +329,9 @@ Constraints:
 1 <= s.length <= 5 * 104
 t.length == s.length
 s and t consist of any valid ascii character.
-```
 ```python
 ```
-## general-hashing-09
-```
+## hashing-09
 290. Word Pattern
 https://leetcode.com/problems/word-pattern/
 Given a pattern and a string s, find if s follows the same pattern.
@@ -374,13 +357,11 @@ pattern contains only lower-case English letters.
 s contains only lowercase English letters and spaces ' '.
 s does not contain any leading or trailing spaces.
 All the words in s are separated by a single space.
-```
 ```python
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
 ```
-## general-hashing-10
-```
+## hashing-10
 791. Custom Sort String
 https://leetcode.com/problems/custom-sort-string/description/
 You are given two strings order and s. All the characters of order are unique and were sorted in some custom order previously.
@@ -407,11 +388,9 @@ Constraints:
 1 <= s.length <= 200
 order and s consist of lowercase English letters.
 All the characters of order are unique.
-```
 ```python
 ```
-## general-hashing-11
-```
+## hashing-11
 1657. Determine if Two Strings Are Close
 https://leetcode.com/problems/determine-if-two-strings-are-close/description/
 Two strings are considered close if you can attain one from the other using the following operations:
@@ -447,6 +426,5 @@ Apply Operation 2: "baaccc" -> "abbccc"
 Constraints:
 1 <= word1.length, word2.length <= 105
 word1 and word2 contain only lowercase English letters.
-```
 ```python
 ```
