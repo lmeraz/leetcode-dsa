@@ -1,10 +1,8 @@
 # 02-sliding-window (completed prompts) (anki complete)
 ## sliding-window-01
-```
 What is the general template for a constraint sliding window
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
-```
-```
+```bash
 function fn(arr):
     left = 0
     for (int right = 0; right < arr.length; right++):
@@ -17,11 +15,9 @@ function fn(arr):
         Do some logic to update the answer
 ```
 ## sliding-window-02
-```
 Example 1:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
 Given an array of positive integers nums and an integer k, find the length of the longest subarray whose sum is less than or equal to k.
-```
 ```python
 def find_length(nums, k):
     # curr is the current sum of the window
@@ -35,13 +31,11 @@ def find_length(nums, k):
     return ans
 ```
 ## sliding-window-03
-```
 Example 2:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
 You are given a binary string s (a string containing only "0" and "1"). You may choose up to one "0" and flip it to a "1". What is the length of the longest substring achievable that contains only "1"?
 
 For example, given s = "1101100111", the answer is 5. If you perform the flip at index 2, the string becomes 1111100111.
-```
 ```python
 # Solution
 def find_length(s):
@@ -58,7 +52,6 @@ def find_length(s):
     return ans
 ```
 ## sliding-window-04
-```
 Example 3:
 713. Subarray Product Less Than K.
 https://leetcode.com/problems/subarray-product-less-than-k/description/
@@ -80,7 +73,6 @@ Constraints:
 1 <= nums.length <= 3 * 104
 1 <= nums[i] <= 1000
 0 <= k <= 106
-```
 ```python
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
@@ -97,10 +89,8 @@ class Solution:
         return ans
 ```
 ## sliding-window-05
-```
 Pseudocode for a fixed window size
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
-```
 ```python
 def fixed_window(arr, k):
     curr = # initialize data
@@ -114,11 +104,9 @@ def fixed_window(arr, k):
     return ans
 ```
 ## sliding-window-06
-```
 Example 4:
 https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/
 Given an integer array nums and an integer k, find the sum of the subarray with the largest sum whose length is k.
-```
 ```python
 def find_best_subarray(nums, k):
     curr = 0
@@ -131,7 +119,6 @@ def find_best_subarray(nums, k):
     return ans
 ```
 ## sliding-window-07
-```
 643. Maximum Average Subarray 1
 https://leetcode.com/problems/maximum-average-subarray-i/description/
 
@@ -152,7 +139,6 @@ Constraints:
 n == nums.length
 1 <= k <= n <= 105
 -104 <= nums[i] <= 104
-```
 ```python
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
@@ -166,7 +152,6 @@ class Solution:
         return max_sum/k
 ```
 ## sliding-window-08
-```
 1004. Max Consecutive Ones III
 https://leetcode.com/problems/max-consecutive-ones-iii/description/
 
@@ -188,7 +173,6 @@ Constraints:
 1 <= nums.length <= 105
 nums[i] is either 0 or 1.
 0 <= k <= nums.length
-```
 ```python
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
@@ -206,7 +190,6 @@ class Solution:
         return ans
 ```
 ## sliding-window-09
-```
 209. Minimum Size Subarray Sum
 https://leetcode.com/problems/minimum-size-subarray-sum/description/
 Given an array of positive integers nums and a positive integer target, return the minimal length of a 
@@ -231,7 +214,6 @@ Constraints:
 1 <= nums[i] <= 104
 
 Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
-```
 ```python
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
@@ -247,7 +229,6 @@ class Solution:
         return ans if ans!= math.inf else 0
 ```
 ## sliding-window-10
-```
 1456. Maximum Number of Vowels in a Substring of Given Length
 https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
 
@@ -274,7 +255,6 @@ Constraints:
 1 <= s.length <= 105
 s consists of lowercase English letters.
 1 <= k <= s.length
-```
 ```python
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
@@ -291,7 +271,6 @@ class Solution:
         return ans
 ```
 ## sliding-window-11
-```
 1208. Get Equal Substring Within Budget
 https://leetcode.com/problems/get-equal-substrings-within-budget/description/
 
@@ -322,7 +301,6 @@ Constraints:
 t.length == s.length
 0 <= maxCost <= 106
 s and t consist of only lowercase English letters.
-```
 ```python
 class Solution:
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
