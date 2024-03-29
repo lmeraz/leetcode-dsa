@@ -1,11 +1,9 @@
 # counting (prompts completed) (anki completed)
 ## counting-01
-```
 Example 1:
 You are given a string s and an integer k. Find the length of the longest substring that contains at most k distinct characters.
 
 For example, given s = "eceba" and k = 2, return 3. The longest substring with at most 2 distinct characters is "ece".
-```
 ```python
 from collections import defaultdict
 
@@ -23,7 +21,6 @@ def find_longest_substring(s, k):
     return ans
 ```
 ## counting-02
-```
 2248. Intersection of Multiple Arrays
 https://leetcode.com/problems/intersection-of-multiple-arrays/description/
 Given a 2D integer array nums where nums[i] is a non-empty array of distinct positive integers, return the list of integers that are present in each array of nums sorted in ascending order.
@@ -45,7 +42,6 @@ Constraints:
 1 <= sum(nums[i].length) <= 1000
 1 <= nums[i][j] <= 1000
 All the values of nums[i] are unique.
-```
 ```python
 from collections import defaultdict
 
@@ -63,7 +59,6 @@ class Solution:
         return sorted(ans)
 ```
 ## counting-03
-```
 1941. Check if All Characters Have Equal Number of Occurrences
 https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/description/
 Given a string s, return true if s is a good string, or false otherwise.
@@ -84,7 +79,6 @@ Explanation: The characters that appear in s are 'a' and 'b'.
 Constraints:
 1 <= s.length <= 1000
 s consists of lowercase English letters.
-```
 ```python
 from collections import defaultdict
 
@@ -102,7 +96,6 @@ class Solution:
         return len(set(Counter(s).values())) == 1
 ```
 ## counting-04
-```
 560. Subarray Sum Equals K
 https://leetcode.com/problems/subarray-sum-equals-k/description/
 Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
@@ -121,7 +114,6 @@ Constraints:
 1 <= nums.length <= 2 * 104
 -1000 <= nums[i] <= 1000
 -107 <= k <= 107
-```
 ```python
 from collections import defaultdict
 
@@ -139,7 +131,6 @@ class Solution:
         return ans
 ```
 ## counting-05
-```
 1248. Count Number of Nice Subarrays
 https://leetcode.com/problems/count-number-of-nice-subarrays/description/
 Given an array of integers nums and an integer k. A continuous subarray is called nice if there are k odd numbers on it.
@@ -164,7 +155,6 @@ Constraints:
 1 <= nums.length <= 50000
 1 <= nums[i] <= 10^5
 1 <= k <= nums.length
-```
 ```python
 from collections import defaultdict
 
@@ -180,7 +170,6 @@ class Solution:
         return ans
 ```
 ## counting-06
-```
 2225. Find Players with Zero or One Losses
 https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
 You are given an integer array matches where matches[i] = [winneri, loseri] indicates that the player winneri defeated player loseri in a match.
@@ -218,7 +207,6 @@ matches[i].length == 2
 1 <= winneri, loseri <= 105
 winneri != loseri
 All matches[i] are unique.
-```
 ```python
 from collections import defaultdict
 class Solution:
@@ -238,7 +226,6 @@ class Solution:
         return [sorted(no_losses), sorted(one_loss)]
 ```
 ## counting-07
-```
 1133. Largest Unique Number
 https://leetcode.com/problems/largest-unique-number/description/
 Given an integer array nums, return the largest integer that only occurs once. If no integer occurs once, return -1.
@@ -256,7 +243,6 @@ Explanation: There is no number that occurs only once.
 Constraints:
 1 <= nums.length <= 2000
 0 <= nums[i] <= 1000
-```
 ```python
 from collections import defaultdict
 class Solution:
@@ -271,7 +257,6 @@ class Solution:
         return ans
 ```
 ## counting-08
-```
 1189. Maximum Number of Balloons
 https://leetcode.com/problems/maximum-number-of-balloons/description/
 Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
@@ -293,7 +278,6 @@ Output: 0
 Constraints:
 1 <= text.length <= 104
 text consists of lower case English letters only.
-```
 ```python
 from collections import defaultdict
 class Solution:
@@ -308,7 +292,6 @@ class Solution:
         return min(ct)
 ```
 ## counting-09
-```
 525. Contiguous Array
 https://leetcode.com/problems/contiguous-array/description/
 Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
@@ -326,7 +309,6 @@ Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal numb
 Constraints:
 1 <= nums.length <= 105
 nums[i] is either 0 or 1.
-```
 ```python
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
@@ -345,7 +327,6 @@ class Solution:
         return res
 ```
 ## counting-10
-```
 1748. Sum of Unique Elements
 https://leetcode.com/problems/sum-of-unique-elements/description/
 You are given an integer array nums. The unique elements of an array are the elements that appear exactly once in the array.
@@ -370,11 +351,9 @@ Explanation: The unique elements are [1,2,3,4,5], and the sum is 15.
 Constraints:
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
-```
 ```python
 ```
 ## counting-11
-```
 3005. Count Elements With Maximum Frequency
 https://leetcode.com/problems/count-elements-with-maximum-frequency/description/
 You are given an array nums consisting of positive integers.
@@ -398,11 +377,10 @@ So the number of elements in the array with maximum frequency is 5.
 Constraints:
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
-```
 ```python
+# solution
 ```
 ## counting-12
-```
 1394. Find Lucky Integer in an Array
 https://leetcode.com/problems/find-lucky-integer-in-an-array/description/
 Given an array of integers arr, a lucky integer is an integer that has a frequency in the array equal to its value.
@@ -427,11 +405,10 @@ Explanation: There are no lucky numbers in the array.
 Constraints:
 1 <= arr.length <= 500
 1 <= arr[i] <= 500
-```
 ```python
+# solution
 ```
 ## counting-13
-```
 1207. Unique Number of Occurrences
 https://leetcode.com/problems/unique-number-of-occurrences/description/
 Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
@@ -452,13 +429,11 @@ Output: true
 Constraints:
 1 <= arr.length <= 1000
 -1000 <= arr[i] <= 1000
-```
 ```python
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
 ```
 ## counting-14
-```
 451. Sort Characters By Frequency
 https://leetcode.com/problems/sort-characters-by-frequency/description/
 Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
@@ -486,13 +461,11 @@ Note that 'A' and 'a' are treated as two different characters.
 Constraints:
 1 <= s.length <= 5 * 105
 s consists of uppercase and lowercase English letters and digits.
-```
 ```python
 class Solution:
     def frequencySort(self, s: str) -> str:
 ```
 ## counting-15
-```
 2958. Length of Longest Subarray With at Most K Frequency
 https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
 You are given an integer array nums and an integer k.
@@ -527,13 +500,11 @@ Constraints:
 1 <= nums.length <= 105
 1 <= nums[i] <= 109
 1 <= k <= nums.length
-```
 ```python
 class Solution:
     def maxSubarrayLength(self, nums: List[int], k: int) -> int:
 ```
 ## counting-16
-```
 1512. Number of Good Pairs
 https://leetcode.com/problems/number-of-good-pairs/description/
 Given an array of integers nums, return the number of good pairs.
@@ -557,13 +528,11 @@ Output: 0
 Constraints:
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
-```
 ```python
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
 ```
 ## counting-17
-```
 930. Binary Subarrays With Sum
 Given a binary array nums and an integer goal, return the number of non-empty subarrays with a sum goal.
 
@@ -586,13 +555,11 @@ Constraints:
 1 <= nums.length <= 3 * 104
 nums[i] is either 0 or 1.
 0 <= goal <= nums.length
-```
 ```python
 class Solution:
     def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
 ```
 ## counting-18
-```
 1695. Maximum Erasure Value
 https://leetcode.com/problems/maximum-erasure-value/description/
 You are given an array of positive integers nums and want to erase a subarray containing unique elements. The score you get by erasing the subarray is equal to the sum of its elements.
@@ -614,11 +581,10 @@ Explanation: The optimal subarray here is [5,2,1] or [1,2,5].
 Constraints:
 1 <= nums.length <= 105
 1 <= nums[i] <= 104
-```
 ```python
+# solution
 ```
 ## counting-19
-```
 567. Permutation in String
 https://leetcode.com/problems/permutation-in-string/description/
 Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
@@ -637,6 +603,6 @@ Output: false
 Constraints:
 1 <= s1.length, s2.length <= 104
 s1 and s2 consist of lowercase English letters.
-```
 ```python
+#solution
 ```
