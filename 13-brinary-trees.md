@@ -180,7 +180,6 @@ class Solution:
                 stack.append((node.right, curr))
 
         return False
-
 ```
 ## binary-trees-09
 Example 3:
