@@ -258,16 +258,18 @@ s consists of lowercase English letters.
 ```python
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
-        ans, left, curr = 0, 0, 0
+        ans, curr = 0, 0
         vowels = {'a','e','i','o','u'}
-        for right in range(len(s)):
-            if s[right] in vowels:
+        for i in range(k):
+            if s[i] in vowels:
                 curr+=1
-            while curr > k:
-                if s[left] in vowels:
-                    curr-=1
-                left+=1
-            ans = max(ans, right-left+1)
+        ans = curr
+        for i in range(k, len(s)):
+            if s[i-k] in vowels:
+                curr-=1
+            if s[i] in vowels:
+                curr+=1
+            ans = max(ans, curr)
         return ans
 ```
 ## sliding-window-11
