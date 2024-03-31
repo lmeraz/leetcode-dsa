@@ -5,10 +5,10 @@ Pseudocode
 #Given an integer array nums
 stack = []
 for num in nums:
-    while stack.length > 0 AND stack.top >= num:
+    while len(stack) > 0 and stack[-1] >=num:
         stack.pop()
-    // Between the above and below lines, do some logic depending on the problem
-    stack.push(num)
+        # Between the above and below lines, do some logic depending on the problem
+    stack.add(num)
 ```
 ## monotonic-02
 739. Daily Temperatures
@@ -295,6 +295,8 @@ class Solution:
     def validSubarrays(self, nums: List[int]) -> int:
 ```
 ## monotonic-09
+
+
 1673. Find the Most Competitive Subsequence
 https://leetcode.com/problems/find-the-most-competitive-subsequence/description/
 Given an integer array nums and a positive integer k, return the most competitive subsequence of nums of size k.
