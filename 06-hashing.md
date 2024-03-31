@@ -23,7 +23,6 @@ Constraints:
 strs[i] consists of lowercase English letters.
 ```python
 from collections import defaultdict
-
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         groups = defaultdict(list)
