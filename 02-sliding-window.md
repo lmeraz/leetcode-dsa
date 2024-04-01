@@ -217,7 +217,7 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 ```python
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        ans = math.inf
+        ans = float('inf')
         left = 0
         curr = 0
         for right in range(len(nums)):
@@ -226,7 +226,7 @@ class Solution:
                 ans = min(ans, right-left+1)
                 curr-=nums[left]
                 left+=1
-        return ans if ans!= math.inf else 0
+        return ans if ans!= float('inf') else 0
 ```
 ## sliding-window-10
 1456. Maximum Number of Vowels in a Substring of Given Length
